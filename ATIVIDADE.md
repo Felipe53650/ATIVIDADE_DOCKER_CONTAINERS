@@ -72,6 +72,8 @@ Mais adiante eu criei um segundo par de chaves SSH, nomeado como projeto2b.
 
 ![image](https://github.com/user-attachments/assets/1d25eb8a-b31c-47eb-8c97-bf315c0d8eee)
 
+![28](https://github.com/user-attachments/assets/9e38c4c2-6474-42be-a024-289c81d38168)
+
 
 ### 4. PASSO - Criar um Banco de Dados (RDS)
 
@@ -80,6 +82,12 @@ Mais adiante eu criei um segundo par de chaves SSH, nomeado como projeto2b.
 ![16](https://github.com/user-attachments/assets/8b4361ba-754d-49c0-8b70-da858edcc996)
 
 ![17](https://github.com/user-attachments/assets/e0d625e5-920a-4543-98d9-35b601336670)
+
+![18](https://github.com/user-attachments/assets/ac3629b2-7d03-439e-8c21-435a6b1642c1)
+
+![19](https://github.com/user-attachments/assets/c9c48c7b-4c48-4216-838a-cd7edfa609df)
+
+![20](https://github.com/user-attachments/assets/74f097a6-54f7-4c1e-9e58-8fe52b9083ac)
 
 ![image](https://github.com/user-attachments/assets/37d7d5e4-37d8-4db7-8648-1b3bd288b66e)
 
@@ -94,9 +102,41 @@ Mais adiante eu criei um segundo par de chaves SSH, nomeado como projeto2b.
 
 ![image](https://github.com/user-attachments/assets/d0b39d54-ec04-4797-8b83-e351541614d2)
 
+### 6. PASSO - Criar um Modelo de Execução
+
+![22](https://github.com/user-attachments/assets/09fb9fe0-eba3-4da2-a324-5d90c9992d2b)
+
+![23](https://github.com/user-attachments/assets/9c7a70b9-8013-4e2b-be79-11e444c8c81c)
+
+![24](https://github.com/user-attachments/assets/426494d0-ced8-4f98-9b55-f0abbcb885d5)
+
+![29](https://github.com/user-attachments/assets/9b5fe9a3-74d8-41d9-b80c-4aaec11894ff)
+
+![30](https://github.com/user-attachments/assets/e15db0c0-5367-430f-9f60-18e9c6f3e264)
+
+![31](https://github.com/user-attachments/assets/631aa658-8a45-4d84-b9f3-a5939fa2bb3d)
 
 
+### 7. PASSO - Criar um grupo de auto scaling
+
+![25](https://github.com/user-attachments/assets/cabbdd7f-f740-42f4-bdd2-96decf5b96c4)
+
+![26](https://github.com/user-attachments/assets/ede53ceb-ce39-42c0-a420-619050548898)
+
+A capacidade desejada ficou em 2 instâncias. A capacidade MÍNIMA desejada também ficou em 2 instâncias, e a capacidade MÁXIMA também em 2 instâncias. Se o usuário for encerrar uma instância, ele pode optar por reduzir a capacidade para 1 ou 0 e salvar. Caso queira abrir novamente as instâncias, deverá aumentar a capacidade para 2 novamente. Assim, o auto scaling irá criar duas novas instâncias para substituir.
+
+![image](https://github.com/user-attachments/assets/ef59a73d-c186-41f5-a3c6-8285910e43f1)
+
+### 8. PASSO - Criar um Grupo de Destino
+
+![27](https://github.com/user-attachments/assets/2330a120-3104-4671-a552-693ebae7ace7)
 
 
+### 9. PASSO - Conectar as instâncias EC2 via Endpoint
+
+![image](https://github.com/user-attachments/assets/6c2608f3-b3bf-444e-ae4d-4b12d0255b3d)
 
 
+### 10. PASSO - Criar um script executável via nano 
+
+`sudo nano docker-compose.yml`
