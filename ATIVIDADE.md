@@ -54,6 +54,48 @@ o mapa de recursos foi finalizado, eis o resultado:
 
 ![Captura de tela 2024-10-03 210130](https://github.com/user-attachments/assets/48d4a6c2-570e-4d37-805f-790ddfe4e04e)
 
+Mais adiante eu criei um segundo par de chaves SSH, nomeado como projeto2b.
+
+![6](https://github.com/user-attachments/assets/2e2ca6ff-9c4c-4571-be13-921564dad45e)
+
+![8](https://github.com/user-attachments/assets/83317914-df0e-4557-a433-0a37ae38f552)
+
+![9](https://github.com/user-attachments/assets/44c69698-aea5-4406-8b93-de188e79b01d)
+
+
+
+### 3. PASSO - Configurar um Load Balancer
+
+![13](https://github.com/user-attachments/assets/eb2a9b81-ccee-4199-8bfe-62279e678d52)
+
+![14](https://github.com/user-attachments/assets/7e21f245-c9cc-4ad0-bf26-0bcb73a4bde1)
+
+![image](https://github.com/user-attachments/assets/1d25eb8a-b31c-47eb-8c97-bf315c0d8eee)
+
+
+### 4. PASSO - Criar um Banco de Dados (RDS)
+
+![15](https://github.com/user-attachments/assets/666386c2-b054-4dc4-b29b-be59704b500d)
+
+![16](https://github.com/user-attachments/assets/8b4361ba-754d-49c0-8b70-da858edcc996)
+
+![17](https://github.com/user-attachments/assets/e0d625e5-920a-4543-98d9-35b601336670)
+
+![image](https://github.com/user-attachments/assets/37d7d5e4-37d8-4db7-8648-1b3bd288b66e)
+
+![image](https://github.com/user-attachments/assets/a1c269a7-ad4d-4ac8-bcab-9081798dcd80)
+
+
+### 5. PASSO - Criar um Sistema Elástico de Arquivos (EFS)
+
+![21](https://github.com/user-attachments/assets/454b09f3-50ad-45fb-9282-01a2b7e8ab10)
+
+![image](https://github.com/user-attachments/assets/1fbcdbfe-74a2-4c8c-9268-df778192d867)
+
+![image](https://github.com/user-attachments/assets/d0b39d54-ec04-4797-8b83-e351541614d2)
+
+
+
 
 
 
