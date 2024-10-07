@@ -140,3 +140,104 @@ A capacidade desejada ficou em 2 instâncias. A capacidade MÍNIMA desejada tamb
 ### 10. PASSO - Criar um script executável via nano 
 
 `sudo nano docker-compose.yml`
+
+Usei o script abaixo:
+
+```
+version: '3.8'
+
+services:
+  wordpress:
+    image: wordpress
+    container_name: wordpress
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: "db"
+      WORDPRESS_DB_USER: "wordpress"
+      WORDPRESS_DB_PASSWORD: "wordpress"
+      WORDPRESS_DB_NAME: "wordpress"
+      TZ: "America/Sao_Paulo"
+    volumes:
+      - /mnt/efs:/var/www/html
+    networks:
+      - wp-network
+
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_DATABASE: "wordpress"
+      MYSQL_USER: "wordpress"
+      MYSQL_PASSWORD: "wordpress"
+      MYSQL_ROOT_PASSWORD: "root_password"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - wp-network
+
+volumes:
+  db_data:
+
+networks:
+  wp-network:
+
+```
+Salva com CTRL+O, ENTER e CTRL+X
+
+
+### 11. PASSO - Montar o sistema de arquivos EFS 
+
+`sudo mount -t efs -o tls fs-033d3aab5cdc7030e:/ /mnt/efs`
+
+Esse comando é encontrado no menu da opção ANEXAR, na aba de Elastic File System
+
+Agora deve ser verificado o status do mesmo:
+
+`df -h`
+
+![image](https://github.com/user-attachments/assets/e77b05ce-f66f-4d38-9bea-0ab6d0e13b95)
+
+
+### 12. PASSO - Verifique o DNS do Load Balancer se está correto
+
+`nslookup <seu-dns>` (o seu dns você copia do dns mostrado no load balancer)
+
+![image](https://github.com/user-attachments/assets/a6154172-fc54-4483-9490-fd3f8b693fbb)
+
+
+### 13. PASSO - Logar o container dentro do banco de dados
+
+`docker run -it --rm mysql:5.7 mysql -h wordpress.ct2mimkcu79c.us-east-1.rds.amazonaws.com -u wordpress -p`  (vai no RDS e pega o endpoint do banco de dados)
+
+### 14. PASSO - Verificar o status e os logs do container
+
+`docker ps` (verifica o status)
+
+![image](https://github.com/user-attachments/assets/d06cfdf1-7757-4af4-8f69-d7675d6a1d76)
+
+
+`docker logs wordpress` (verifica os logs)
+
+![image](https://github.com/user-attachments/assets/296a0e2e-db6f-4d2d-ad79-5735c038e918)
+
+
+### 15. PASSO - Subir o container
+
+`docker-compose up`
+
+## RESULTADOS
+
+![Captura de tela 2024-10-07 100349](https://github.com/user-attachments/assets/a2b0a6e2-6b87-4534-8c71-d6845f7a0ed3)
+
+![Captura de tela 2024-10-07 100432](https://github.com/user-attachments/assets/db6b8195-af33-4636-a0be-b7c132eb9239)
+
+![Captura de tela 2024-10-07 100452](https://github.com/user-attachments/assets/b3fc24b7-d394-4c80-8159-20e7f5805367)
+
+![Captura de tela 2024-10-06 203331](https://github.com/user-attachments/assets/ce4d824c-f745-4561-b802-6ade99d65152)
+
+De acordo com as imagens mostradas, o container subiu e está rodando com sucesso. O WordPress está interativo e de acordo com o esperado.
+
+
+
+
