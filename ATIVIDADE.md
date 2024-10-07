@@ -226,6 +226,8 @@ Agora deve ser verificado o status do mesmo:
 
 `docker-compose up`
 
+O terminal provavelmente irá iniciar vários downloads entre outras coisas, e quando começar a vir os logs, você abre uma nova aba no navegador e cola o seu DNS no campo da URL. Talvez irá aparecer algum erro como 502 Bad Gateway ou 503 Service unavailable, caso aconteça, vai atualizando a página com F5 ou CTRL+R até aparecer as telas do WordPress.
+
 ## RESULTADOS
 
 ![Captura de tela 2024-10-07 100349](https://github.com/user-attachments/assets/a2b0a6e2-6b87-4534-8c71-d6845f7a0ed3)
